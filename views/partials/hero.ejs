@@ -1,0 +1,19 @@
+<script src="/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $(".slideup").click(function(){
+        $("#hero, .hero-container").animate({height: "0"},  );
+        $("#hero, .hero-container").fadeOut();
+        
+      });
+     
+    });
+    </script>
+
+<section id="hero">
+    <div class="hero-container">
+      <h1>Ankit Butola</h1>
+      <h2>I'm a Software Engineer In Tata Consultancy Services</h2>
+      <a href="about"><i class=" bx bx-chevron-down">EXPLORE</i></a>
+    </div>
+  </section><!-- End Hero -->

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %>
+  </title>
+  <!--CSS ---- section-->
+  <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/@fortawesome/fontawesome-free/css/all.min.css' />
+  <link rel='stylesheet' href='/content/app.css' />
+
+  <!-- Template Main CSS File -->
+  <link href="content/style.css" rel="stylesheet">
+  <title>Document</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+
+  <style>
+    .logo {
+      height: 9vh;
+      width: 12vh;
+    }
+
+    .image-size {
+      height: 327px;
+      margin-bottom: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- main Navigation -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-success "> -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success nav-resposive" style="z-index:100">
+  <!--branding logo may include here -->
+  <a class="navbar-brand" href="/">
+    <img class="logo" src="assets/images/logo.png" alt="LOGO"></img>
+  </a>
+  <!--hamburger below button  -->
+
+  <div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <% if ((title==" Home" ) || (title=="/" )){%>
+
+        <li class= "nav-item active">
+          <% } else {%>
+        <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/home"><i class="fas fa-house-user"></i> Home </a>
+        </li>
+        <% if (title=="About" ) {%>
+          <li class="nav-item active">
+            <% } else {%>
+          <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/about"><i class="far fa-address-card"></i> About Me</a>
+          </li>
+          <% if (title=="Projects" ) {%>
+            <li class="nav-item active">
+              <% } else {%>
+            <li class="nav-item">
+              <% } %>
+                <a class="nav-link" href="/projects"><i class="fas fa-project-diagram"></i> Projects</a>
+            </li>
+            <% if (title=="Services" ) {%>
+              <li class="nav-item active">
+                <% } else {%>
+              <li class="nav-item">
+                <% } %>
+                  <a class="nav-link" href="/services"><i class="fas fa-concierge-bell"></i> Services</a>
+              </li>
+              <% if (title=="Contact" ) {%>
+                <li class="nav-item active">
+                  <% } else {%>
+                <li class="nav-item">
+                  <% } %>
+                    <a class="nav-link" href="/contact"><i class="fas fa-phone-square-alt"></i> Contact</a>
+                </li>
+
+      </ul>
+    </div>
+  </div>
+  </nav>

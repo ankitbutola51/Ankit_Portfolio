@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
-let contactName = "njkk";
-let contactNumber = "";
+let contactFName = "";
+let contactLname = "";
 let contactEmail ="";
+let message ="";
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home'});
@@ -10,12 +13,21 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home' });
+  res.render('index', { title: 'Home'});
 });
 
 /* GET About Me*/
 router.get('/about', function(req, res, next) {
   res.render('index', { title: 'About' });
+});
+
+//submit message
+router.get('/message', function(req, res, next) {
+  res.render('index', { title: 'Message',
+  contactFName: contactFName, 
+  contactLname: contactLname,
+   contactEmail: contactEmail,
+    message: message  });
 });
 
 
@@ -36,11 +48,19 @@ router.get('/contact', function(req, res, next) {
 
 
 router.post('/contact', function(req, res, next) {
+
+  console.log("information saved. We will contact you soon.",req.body);
+
+  contactFName = req.body.name;
+  contactLname = req.body.Lname;
+  contactEmail = req.body.email;
+  message = req.body.message;
+
+   //res.render('index', { details: req.body});
   
-  // contactName = req.body.name;
-  // res.render('index', { title: 'Home'});
-  res.redirect('/home');
-  console.log(`information saved. We will contact you soon.${req.body.name}`);
+   res.redirect('/message');
+  
+  
 });
 
 module.exports = router;

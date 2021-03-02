@@ -1,0 +1,47 @@
+ <link href="../content/style.css" rel="stylesheet">
+<%- include ../partials/header.ejs %>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Contact Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Business Contact Name...."
+                    Name="Name" value=" <%= Bcontact.Name %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Contact Number</label>
+                    <input type="text" class="form-control"
+                    id="authorTextField"
+                    placeholder="Enter the Business Contact Number...."
+                    Name="Contact"  value=" <%= Bcontact.Contact %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedTextField">Contact E-mail</label>
+                    <input type="text" class="form-control"
+                    id="publishedTextField"
+                    placeholder="Enter the Business E-mail Address...."
+                    Name="Email" value=" <%= Bcontact.Email %>" required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/businessContactList" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+                    <!-- <a href="edit/delete/<%= Bcontact._id %>" class="btn-danger btn btn-primary" role="button">
+                         <i class="fas fa-delete-alt"></i> Delete </a> -->
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include ../partials/footer.ejs %>

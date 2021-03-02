@@ -1,0 +1,45 @@
+ <%- include ../partials/header.ejs %>
+
+
+<!-- Main Content -->
+  <main class="container" >
+    <div class="row" style="margin-top: 51px">
+        <div class="col-md-12">
+        <div class="section-title">
+            <span><%= title %></span>
+            <h2><%= title %></h2>    
+        </div>
+            <a href="businessContactList/add" class="btn btn-primary" style="float:right" role = "button">
+            <i class="fas fa-plus-circle"></i> Add a Contact</a>
+            <br>
+            <table class="table table-bordered table-striped table-hover" style="border: 1px solid; padding: 10px; box-shadow: 5px 10px 8px #888888;">
+                <!-- Header Row-->
+                <tr class="d-flex thead-dark">
+                    <th class="text-center col-3">Name</th>
+                    <th class="text-center col-3">Contact No.</th>
+                    <th class="text-center col-3">E-mail</th>
+                    <th class="text-center col-3">Actions</th>
+                </tr>
+                <!-- Repeatable Template Row -->
+   
+                <% for(let count = 0; count < BcontactList.length; count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-3"> <%= BcontactList[count].Name %> </td> 
+                        <td class="text-center col-3"> <%= BcontactList[count].Contact %> </td>
+                        <td class="text-center col-3"> <%= BcontactList[count].Email %> </td>
+                        <td class="text-center col-3 table-danger"> 
+                            <a href="businessContactList/edit/<%= BcontactList[count]._id %>" class="btn btn-primary" role="button">
+                              <i class="fas fa-pen-alt"></i> Update </a>
+                              &nbsp &nbsp &nbsp
+                              <a href="businessContactList/delete/<%= BcontactList[count]._id %>" class="btn-danger btn btn-primary" role="button">
+                                <i class="fas fa-delete-alt"></i> Delete </a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+
+
+ <%- include ../partials/footer.ejs %>

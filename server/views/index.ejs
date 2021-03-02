@@ -1,8 +1,7 @@
 <% if ((title=="/" ) || (title=="Home" )) {%>
   <%- include partials/hero.ejs %>
-    <% } %>
+<% } %>
       <%- include partials/header.ejs %>
-
         <main id="main">
 
           <!-- ======= About Me Section ======= -->
@@ -87,11 +86,11 @@
 
               </div>
             </section><!-- End About Me Section -->
-            <% } %>
+          <% } %>
 
-              <% if (title=="Projects" ) {%>
-                <!-- ======= My Projects Section ======= -->
-                <section id="projects" class="services">
+          <% if (title=="Projects" ) {%>
+          <!-- ======= My Projects Section ======= -->
+            <section id="projects" class="services">
                   <div class="container">
 
                     <div class="section-title">
@@ -185,13 +184,13 @@
                     </div>
                   </div>
                   <!--container end-->
-                </section><!-- End My Projects Section -->
+            </section><!-- End My Projects Section -->
+          <% } %>
 
-                <% } %>
-                  <% if (title=="Services" ) {%>
-                    <!-- ======= My services Section ======= -->
-                    <section id="services" class="services">
-                      <div class="container">
+          <% if (title=="Services" ) {%>
+          <!-- ======= My services Section ======= -->
+            <section id="services" class="services">
+                <div class="container">
 
                         <div class="section-title">
                           <span>Services</span>
@@ -246,16 +245,14 @@
                         </div>
 
                       </div> <!-- Container -->
-                    </section><!-- End My Projects Section -->
-
-                    <% } %>
-
-
-                      <!-- ======= Contact Me Section ======= -->
-                      <% if (title=="Contact" ) { %>
+            </section><!-- End My Projects Section -->
+          <% } %>
 
 
-                        <section id="contact" class="contact">
+                      
+          <% if (title=="Contact" ) { %>
+          <!-- ======= Contact Me Section ======= -->
+            <section id="contact" class="contact">
                           <div class="container">
 
                             <div class="section-title">
@@ -345,27 +342,22 @@
 
                           </div>
 
-                        </section> <!-- End Contact Me Section -->
+            </section> <!-- End Contact Me Section -->
+          <% } %>
 
-                        <% } %>
+          <% if (title=="Message") { %>
+              <% if (contactFName !=null && contactFName !=="" ) { %>
+                <div class="jumbotron">
+             <h1 class="display-4">Hi!! <%= contactFName %> , thank for submitting you information, I
+                                    will be in contact with
+                                    you soon.</h1>
 
+              <a class="btn btn-primary btn-lg" href="/home" role="button">Go to Home page</a>
+                </div>
+              <% } %>
+           <!-- The Modal -->
+          <% } %>
 
-
-                          <% if (title=="Message" ) { %>
-
-
-                            <% if (contactFName !=null && contactFName !=="" ) { %>
-                              <div class="jumbotron">
-                                <h1 class="display-4">Hi!! <%= contactFName %> , thank for submitting you information, I will be in contact with
-                                  you soon.</h1>
-                                
-                                <a class="btn btn-primary btn-lg" href="/home" role="button">Go to Home page</a>
-                                </div>
-                                <% } %>
-                              </div>
-                              <div>
-                              <!-- The Modal -->
-                              
-                              <% } %>
+          
         </main>
         <%- include partials/footer.ejs %>
